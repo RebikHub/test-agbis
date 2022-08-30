@@ -28,13 +28,10 @@ export default function Header() {
       <div className='header-navigation'>
         <div className='header-menu'></div>
         <div className='header-logo'>
-          <h3 className='logo-title'>YOUR LOGO</h3>
+          <p className='logo-title'>YOUR LOGO</p>
           <p className='logo-text'>ADDITIONAL TEXT</p>
         </div>
-        <div className='header-price'>
-          <span className='price-search'></span>
-          <p className='price-text'>Прайс-лист</p>
-        </div>
+        <button className='header-btn' type='button'>Прайс-лист</button>
       </div>
     </header>
   )
