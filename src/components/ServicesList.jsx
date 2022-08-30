@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../styles/main.css';
 
 const list = {
@@ -6,29 +6,29 @@ const list = {
   clothes: ['Аксессуары', 'Верхняя одежда', 'Деловой костюм', 'Джинса', 'Куртка и пуховик', 'Пальто и плащ']
 };
 
-export default function ServicesList() {
+export default function ServicesList({choiceClothes}) {
   const [id, setId] = useState({
     service: null,
     clothes: null
   });
 
-  useEffect(() => {
-    console.log(id.clothes !== null);
-  }, [id.clothes]);
-
   function clickService(index) {
     if (id.service === null) {
       setId({...id, service: index});
     } else {
-      setId({...id, service: null});
+      setId({clothes: null, service: null});
     };
   };
 
   function clickClothes(index) {
     if (id.clothes === null) {
       setId({...id, clothes: index});
-    } else {
+      choiceClothes(list.clothes[index]);
+    } else if (id.clothes === index) {
       setId({...id, clothes: null});
+    } else {
+      setId({...id, clothes: index});
+      choiceClothes(list.clothes[index]);
     };
   };
 

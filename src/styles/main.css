@@ -88,7 +88,6 @@
   position: relative;
   display: flex;
   align-items: center;
-  /* width: 165px; */
   width: 155px;
   height: 32px;
   margin-top: 8px;
@@ -199,5 +198,133 @@
 
 
 /* Clothes list */
+
+.clothes-list {
+  list-style: none;
+}
+
+.clothes-list-item {
+  display: flex;
+  width: 946px;
+  height: 124px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.clothes-list-item:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.clothes-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 16px 60px;
+}
+
+.clothes-name {
+  font-family: 'Montserrat-regular';
+  font-size: 16px;
+  line-height: 22px;
+  color: #1D252E;
+}
+
+
+.clothes-more {
+  display: flex;
+  width: 110px;
+  align-items: center;
+  font-family: 'Montserrat-light';
+  font-size: 14px;
+  line-height: 18px;
+  color: #2A3B45;
+  cursor: pointer;
+}
+
+.clothes-more:hover {
+  color: #0084CA;
+}
+
+.clothes-more:hover .more-img {
+  background-image: url(../images/more-hover.png);
+}
+
+.more-img {
+  display: flex;
+  width: 13px;
+  height: 13px;
+  background-image: url(../images/more-arrow.png);
+  margin-left: 8px;
+}
+
+.clothes-order {
+  display: flex;
+  margin: 34px 53px 38px auto;
+}
+
+.clothes-price {
+  font-family: 'Montserrat-bold';
+  font-size: 18px;
+  line-height: 24px;
+  /* identical to box height, or 133% */
+  
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: #1D252E;
+}
+
+.clothes-add {
+
+}
+
+.add-btn {
+  width: 52px;
+  height: 52px;
+  margin-left: 33px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 1px solid #0084CA;
+  background-color: #0084CA;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #016DA6;
+  border: 1px solid #016DA6;
+}
+
+.add-btn:focus {
+  background-color: #0084CA;
+  border: 1px solid #016DA6;
+}
+
+.add-btn::before {
+  content: '';
+  display: flex;
+  width: 90%;
+  height: 102%;
+  background-image: url(../images/cart.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.add-amount {
+
+}
+
+.amount-decrement {
+
+}
+
+.amount-number {
+
+}
+
+.amount-increment {
+
+}
 
 /* Clothes list */
