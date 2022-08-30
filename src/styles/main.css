@@ -1,0 +1,74 @@
+.main {
+  display: flex;
+  margin: 80px 150px;
+}
+
+.main-left {
+  width: 157px;
+  margin-right: 20px;
+}
+
+.main-title {
+  width: 155px;
+  height: 52px;
+}
+
+.main-text {
+  font-family: 'Montserrat-regular';
+  font-size: 44px;
+  line-height: 52px;
+  color: #1D252E;
+}
+
+.main-body {
+
+}
+
+.main-description {
+  width: 946px;
+  height: 66px;
+  margin-top: 87px;
+  margin-bottom: 66px;
+}
+
+.description-text {
+  font-family: 'Montserrat-regular';
+  font-size: 16px;
+  line-height: 22px;
+  color: #1D252E;
+}
+
+/* Services list */
+
+/* Services list */
+
+
+/* Search form */
+
+.form {
+  position: relative;
+
+}
+
+.form-input {
+
+}
+
+.form-img {
+
+}
+
+.form-img-active {
+  
+}
+
+.form-error {
+  position: absolute;
+}
+
+/* Search form */
+
+
+/* Clothes list */
+
+/* Clothes list */

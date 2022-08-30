@@ -9,18 +9,28 @@
   font-family: 'Roboto-bold';
   src: url(./fonts/Roboto/Roboto-Bold.ttf);
   font-weight: 700;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'Roboto-regular';
   src: url(./fonts/Roboto/Roboto-Regular.ttf);
   font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'Montserrat-bold';
   src: url(./fonts/Montserrat/Montserrat-Bold.ttf);
   font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat-regular';
+  src: url(./fonts/Montserrat/Montserrat-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
 }
 
 #root {
