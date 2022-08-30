@@ -3,6 +3,7 @@ import '../styles/main.css';
 import ClothesList from './ClothesList';
 import SearchForm from './SearchForm';
 import ServicesList from './ServicesList';
+import ShoppingCart from './ShoppingCart';
 
 const clothes = {
   outerwear: [
@@ -26,7 +27,7 @@ const clothes = {
   businessSuit: [
     {
       name: 'Пиджак',
-      price: 14000
+      price: 1400
     },
     {
       name: 'Пиджак натуральный шелк',

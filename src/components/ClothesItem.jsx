@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/main.css';
 
 export default function ClothesItem({item}) {
   const [none, setNone] = useState('none');
+  const [amount, setAmount] = useState(1);
 
   function clickAddBtn() {
+    setAmount(1);
     if (none === 'none') {
       setNone('');
     } else {
       setNone('none')
-    }
-  }
+    };
+  };
+
+  useEffect(() => {
+    if (amount < 1) {
+      setNone('none');
+    };
+  }, [amount]);
 
   return (
     <div className='clothes-list-item'>
@@ -24,11 +32,15 @@ export default function ClothesItem({item}) {
           <button
             className={none === 'none' ? 'add-btn' : 'none'}
             type='button'
-            onClick={clickAddBtn}></button>
+            onClick={clickAddBtn}/>
           <div className={`add-amount ${none}`}>
-            <span className='amount-decrement'></span>
-            <p className='amount-number'>1</p>
-            <span className='amount-increment'></span>
+            <span
+              className='amount-decrement'
+              onClick={() => setAmount((prev) => prev - 1)}/>
+            <p className='amount-number'>{amount}</p>
+            <span
+              className='amount-increment'
+              onClick={() => setAmount((prev) => prev + 1)}/>
           </div>
         </div>
       </div>

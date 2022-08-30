@@ -1,6 +1,7 @@
 .main {
+  position: relative;
   display: flex;
-  margin: 80px 150px;
+  margin: 80px 150px 0 150px;
 }
 
 .main-left {
@@ -71,7 +72,8 @@
   height: 6px;
   padding-left: 12px;
   background-image: url(../images/arrow-list.png);
-  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   margin-left: 12px;
   align-self: center;
 }
@@ -261,7 +263,7 @@
 
 .clothes-order {
   display: flex;
-  margin: 34px 53px 38px auto;
+  margin: 34px 0 38px auto;
 }
 
 .clothes-price {
@@ -277,13 +279,14 @@
 }
 
 .clothes-add {
-
+  display: flex;
 }
 
 .add-btn {
   width: 52px;
   height: 52px;
   margin-left: 33px;
+  margin-right: 53px;
   border-radius: 50%;
   box-sizing: border-box;
   border: 1px solid #0084CA;
@@ -312,19 +315,184 @@
 }
 
 .add-amount {
+  display: flex;
+  justify-content: space-between;
+  width: 90px;
+  height: 40px;
+  border: 1px solid #0084CA;
+  border-radius: 4px;
+  margin-left: 14px;
+  margin-right: 34px;
+  align-self: center;
+}
 
+.amount-decrement, .amount-increment {
+  display: flex;
+  width: 36px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .amount-decrement {
-
+  background-image: url(../images/minus.png);
 }
 
 .amount-number {
-
+  font-family: 'Montserrat-bold';
+  font-size: 22px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #1D252E;
 }
 
 .amount-increment {
-
+  background-image: url(../images/plus.png);
 }
 
 /* Clothes list */
+
+/* Shopping cart */
+
+.cart, .cart-long {
+  display: flex;
+  position: absolute;
+  width: 520px;
+  right: 0;
+  bottom: -15px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.15);
+  border-radius: 20px 0px 0px 0px;
+  z-index: 1;
+}
+
+.cart {
+  height: 158px;
+}
+
+.cart-long {
+
+}
+
+.cart-body {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  margin: 28px 0 auto 83px;
+}
+
+.cart-header {
+  width: 100%;
+  height: 130px;
+}
+
+.cart-title {
+  font-family: 'Montserrat-bold';
+  font-size: 24px;
+  line-height: 30px;
+  color: #0084CA;
+}
+
+.cart-amount, .cart-sum {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-amount {
+  margin-top: 20px;
+}
+
+.cart-amount-text, .cart-sum-text {
+  font-family: 'Montserrat-regular';
+  font-size: 18px;
+  line-height: 22px;
+  color: #1D252E;
+}
+
+.cart-sum {
+  margin-top: 8px;
+}
+
+.cart-amount-number, .cart-sum-number {
+  font-family: 'Montserrat-bold';
+  font-size: 18px;
+  line-height: 22px;
+  color: #1D252E;
+}
+
+.order {
+  margin-top: 15px;
+}
+
+.order-title {
+
+}
+
+.order-title-text {
+
+}
+
+.order-description {
+
+}
+
+.order-desc-close {
+
+}
+
+.order-desc-body {
+
+}
+
+.order-desc-text {
+
+}
+
+.order-desc-amount {
+
+}
+
+.order-desc-sum {
+
+}
+
+.order-desc-add {
+
+}
+
+.cart-arrow-btn, .cart-arrow-btn-invert {
+  width: 38px;
+  height: 38px;
+  box-sizing: border-box;
+  display: flex;
+  margin: 12px 12px auto 40px;
+  border: 1px solid #0084CA;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.cart-arrow-btn-invert::before {
+  transform: rotate(180deg);
+}
+
+.cart-arrow-btn::before, .cart-arrow-btn-invert::before {
+  content: '';
+  margin: auto;
+  width: 12px;
+  height: 12px;
+  background-image: url(../images/cart-arrow.png);
+  background-position: center;
+}
+
+.cart-arrow-btn:hover, .cart-arrow-btn-invert:hover {
+  border: 2px solid #0084CA;
+}
+
+/* Shopping cart */
+
+.none {
+  display: none;
+}
