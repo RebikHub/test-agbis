@@ -45,25 +45,71 @@
 
 /* Search form */
 
-.form {
+.form, .form-line {
+  display: flex;
   position: relative;
+  width: 263px;
+  height: 36px;
+  margin-left: auto;
+}
 
+.form {
+  border-bottom: 1px solid #2A3B45;
+}
+
+.form-line {
+  border-bottom: 1px solid #FF0000;
 }
 
 .form-input {
+  border: none;
+  width: 90%;
+  height: 100%;
+  font-family: 'Montserrat-medium';
+  font-size: 14px;
+  line-height: 18px;
+  color: #1D252E;
+}
 
+.form-input::placeholder {
+  font-family: 'Montserrat-light';
+  font-size: 14px;
+  line-height: 18px;
+  color: #1D252E;
+  opacity: 0.4;
+  padding-left: 3px;
+}
+
+.form-input:focus {
+  outline: none;
+}
+
+.form-img, .form-img-active {
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  cursor: pointer;
 }
 
 .form-img {
-
+  width: 20px;
+  height: 20px;
+  background-image: url(../images/linsa.png);
 }
 
 .form-img-active {
-  
+  width: 12px;
+  height: 12px;
+  background-image: url(../images/close.png);
 }
 
 .form-error {
   position: absolute;
+  top: 36px;
+  font-family: 'Roboto-light';
+  font-size: 10px;
+  line-height: 16px;
+  color: #FF0000;
 }
 
 /* Search form */

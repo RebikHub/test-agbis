@@ -20,6 +20,13 @@
 }
 
 @font-face {
+  font-family: 'Roboto-light';
+  src: url(./fonts/Roboto/Roboto-Light.ttf);
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Montserrat-bold';
   src: url(./fonts/Montserrat/Montserrat-Bold.ttf);
   font-weight: 700;
@@ -30,6 +37,20 @@
   font-family: 'Montserrat-regular';
   src: url(./fonts/Montserrat/Montserrat-Regular.ttf);
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat-light';
+  src: url(./fonts/Montserrat/Montserrat-Light.ttf);
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat-medium';
+  src: url(./fonts/Montserrat/Montserrat-Medium.ttf);
+  font-weight: 500;
   font-style: normal;
 }
 
