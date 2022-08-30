@@ -4,7 +4,7 @@
 }
 
 .main-left {
-  width: 157px;
+  width: 175px;
   margin-right: 20px;
 }
 
@@ -39,6 +39,89 @@
 }
 
 /* Services list */
+
+.nav {
+  margin-top: 200px;
+}
+
+.nav-service {
+  margin-bottom: 12px;
+}
+
+.nav-title, .nav-title-focus {
+  display: flex;
+  font-family: 'Montserrat-regular';
+  font-size: 16px;
+  line-height: 26px;
+  color: #0084CA;
+  cursor: pointer;
+}
+
+.nav-title-focus {
+  text-decoration: underline;
+}
+
+.nav-title:hover {
+  text-decoration: underline;
+}
+
+.nav-img, .nav-img-invert {
+  display: flex;
+  width: 12px;
+  height: 6px;
+  padding-left: 12px;
+  background-image: url(../images/arrow-list.png);
+  background-size: cover;
+  margin-left: 12px;
+  align-self: center;
+}
+
+.nav-img-invert {
+  transform: rotate(180deg);
+}
+
+.service-list {
+  list-style: none;
+}
+
+.clothes-item, .clothes-item-focus {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* width: 165px; */
+  width: 155px;
+  height: 32px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.clothes-item-focus {
+  background-color: #F2F2F2;
+}
+
+.clothes-item-focus::before, .clothes-item:hover::before {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: #F2F2F2;
+  transform: rotate(45deg);
+  left: 142px;
+  border-radius: 4px;
+  z-index: -1;
+}
+
+.clothes-item:hover {
+  background-color: #F2F2F2;
+}
+
+.clothes-text {
+  font-family: 'Montserrat-regular';
+  font-size: 16px;
+  line-height: 26px;
+  color: #1D252E;
+  padding-left: 8px;
+}
 
 /* Services list */
 
