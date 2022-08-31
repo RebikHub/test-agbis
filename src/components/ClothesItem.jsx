@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addOrder, deleteOrder } from '../store/sliceCart';
 import '../styles/main.css';
 
-export default function ClothesItem({item}) {
+export default function ClothesItem({item, service}) {
   const [none, setNone] = useState('none');
   const [amount, setAmount] = useState(1);
+  const dispatch = useDispatch();
 
   function clickAddBtn() {
     setAmount(1);
@@ -15,10 +18,26 @@ export default function ClothesItem({item}) {
   };
 
   useEffect(() => {
+    const order = {
+      service: service,
+      clothes: {
+        name: item.name,
+        price: item.price,
+        amount: amount
+      }
+    };
+
     if (amount < 1) {
       setNone('none');
     };
-  }, [amount]);
+
+    if (none !== 'none' && amount > 0) {
+      dispatch(addOrder(order));
+    } else if (amount === 0) {
+      dispatch(deleteOrder(order));
+    };
+
+  }, [amount, none]);
 
   return (
     <div className='clothes-list-item'>

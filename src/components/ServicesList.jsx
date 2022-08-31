@@ -17,10 +17,10 @@ export default function ServicesList({choiceClothes}) {
     };
   };
 
-  function clickClothes(index, list) {
+  function clickClothes(index, list, service) {
     if (id.clothes === null) {
       setId({...id, clothes: index});
-      choiceClothes(list);
+      choiceClothes(list, service);
     } else if (id.clothes === index) {
       setId({...id, clothes: null});
     } else {
@@ -43,7 +43,7 @@ export default function ServicesList({choiceClothes}) {
             {e.clothes.map((el, index) => (
               <li
                 className={`clothes-item${index === id.clothes ? '-focus' : ''}`}
-                onClick={() => clickClothes(index, el.clothes_type)}
+                onClick={() => clickClothes(index, el.clothes_type, e.name)}
                 key={index}>
                 <p className='clothes-text'>{el.type}</p>
               </li>

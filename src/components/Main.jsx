@@ -6,10 +6,12 @@ import ServicesList from './ServicesList';
 
 export default function Main() {
   const [listClothes, setListClothes] = useState([]);
+  const [service, setService] = useState(null)
 
-  function choiceClothes(list) {
+  function choiceClothes(list, service) {
     setListClothes(list);
-  }
+    setService(service)
+  };
 
   return (
     <main className='main'>
@@ -27,7 +29,7 @@ export default function Main() {
             Из-за ежедневного использования повседневная одежда быстро изнашивается и нуждается в профессиональном уходе. То, что чаще носится, должно и чаще чиститься! Подбирать для повседневной одежды правильные программы обработки – это задача профессионалов.
           </p>
         </div>
-        <ClothesList list={listClothes}/>
+        <ClothesList list={listClothes} service={service}/>
       </section>
     </main>
   )

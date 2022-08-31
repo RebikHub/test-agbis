@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
-export default function ShoppingCart({order}) {
+export default function ShoppingCart() {
+  const cart = useSelector((state) => state.sliceCart);
+  // console.log(cart);
   const [amount, setAmount] = useState(1);
   const [none, setNone] = useState(false);
+
+  if (!cart.length) {
+    return null;
+  };
 
   return (
     <div className={none ? 'cart-long' : 'cart'}>
@@ -21,28 +28,29 @@ export default function ShoppingCart({order}) {
 
         {none &&
         <div>
-          {order.map((e,i) => (
+          {cart.map((e,i) => (
             <div className='order' key={i}>
               <div className='order-title'>
                 <p className='order-title-text'>{e.service}</p>
               </div>
               <div className='order-description'>
                 <span className='order-desc-close'/>
-                <div className='order-desc-body'>
-                  <p className='order-desc-text'>{e.clothes}</p>
+                {e.clothes.map((el, index) => (
+                <div className='order-desc-body' key={index}>
+                  <p className='order-desc-text'>{el.name}</p>
                   <div className='order-desc-amount'>
-                    <p className='order-desc-sum'>{e.price}&#8381;</p>
+                    <p className='order-desc-sum'>{el.price}&#8381;</p>
                     <div className='order-desc-add'>
                       <span
                         className='order-decrement'
                         onClick={() => setAmount((prev) => prev - 1)}/>
-                      <p className='order-number'>{amount}</p>
+                      <p className='order-number'>{el.amount}</p>
                       <span
                         className='order-increment'
                         onClick={() => setAmount((prev) => prev + 1)}/>
                     </div>
                   </div>
-                </div>
+                </div>))}
               </div>
             </div>
           ))}
