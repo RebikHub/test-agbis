@@ -13,56 +13,49 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const sliceCart = createSlice({
   name: 'sliceCart',
-  initialState: [
-    {
-      service: 'Химчистка',
-      clothes: [
-        {
-          name: 'Пальто, полупальто с подстежкой из натурального меха',
-          price: 1400,
-          amount: 1
-        }
-      ]
-    },
-    {
-      service: 'Аквачистка',
-      clothes: [
-        {
-          name: 'Пиджак натуральный шелк',
-          price: 520,
-          amount: 1
-        }
-      ]
-    }
-  ],
+  initialState: {
+    order: []
+  },
   reducers: {
     addOrder: (state, actions) => {
-      let serviceIndex = null;
-      let clothesIndex = null;
+      const list = [...state.order];
 
-      state.map((e, i) => {
+      if (list.some((e) => e.service === actions.payload.service)) {
+        list.map((el) => {
+          if (el.service === actions.payload.service) {
+            if (el.clothes.some((elem) => elem.name === actions.payload.clothes.name && elem.price === actions.payload.clothes.price)) {
+              el.clothes.map((elem) => {
+                if (elem.name === actions.payload.clothes.name && elem.price === actions.payload.clothes.price) {
+                  elem.amount = actions.payload.clothes.amount;
+                };
+              });
+            } else {
+              el.clothes.push(actions.payload.clothes);
+            }
+          }
+        })
+      } else {
+        list.push({
+          service: actions.payload.service,
+          clothes: [actions.payload.clothes]
+        })
+      };
+
+      state.order = [...list];
+    },
+    deleteOrder: (state, actions) => {
+      const list = [...state.order];
+      let index = null;
+      list.map((e,i) => {
         if (e.service === actions.payload.service) {
-          serviceIndex = i
+          e.clothes = e.clothes.filter((el) => el.name !== actions.payload.clothes.name && el.price !== actions.payload.clothes.price);
         };
       });
 
-      if (serviceIndex) {
-        state[serviceIndex].clothes.map((e,i) => {
-          if (e.name === actions.payload.clothes.name) {
-            e.amount = actions.payload.clothes.amount
-          };
-        })
-      } else {
-
-      }
-
-      console.log(actions.payload)
-    },
-    deleteOrder: (state, actions) => {
-      console.log(actions.payload)
+      state.order = list.filter((e) => e.clothes.length > 0);
     },
     removeService: (state, actions) => {
-
+      state.order = state.order.filter((e) => e.service !== actions.payload);
     }
   }
 });

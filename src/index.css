@@ -54,8 +54,16 @@
   font-style: normal;
 }
 
+body {
+  background-color: black;
+  z-index: -3;
+}
+
 #root {
   position: relative;
+  background-color: #FBFBFC;
   width: 1440px;
+  height: 100%;
   margin: 0 auto;
+  z-index: 1;
 }

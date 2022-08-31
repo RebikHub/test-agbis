@@ -5,36 +5,54 @@ import '../styles/main.css';
 
 export default function ClothesItem({item, service}) {
   const [none, setNone] = useState('none');
-  const [amount, setAmount] = useState(1);
+  const [amount, setAmount] = useState(0);
   const dispatch = useDispatch();
 
   function clickAddBtn() {
     setAmount(1);
     if (none === 'none') {
       setNone('');
-    } else {
-      setNone('none')
+      dispatch(addOrder({
+        service: service,
+        clothes: {
+          name: item.name,
+          price: item.price,
+          amount: 1
+        }
+      }));
     };
   };
 
-  useEffect(() => {
-    const order = {
-      service: service,
-      clothes: {
-        name: item.name,
-        price: item.price,
-        amount: amount
-      }
-    };
+  function incAmount() {
+    setAmount((prev) => prev + 1);
+  };
 
+  function decAmount() {
+    setAmount((prev) => prev - 1);
+  };
+
+  useEffect(() => {
     if (amount < 1) {
       setNone('none');
+      dispatch(deleteOrder({
+        service: service,
+        clothes: {
+          name: item.name,
+          price: item.price,
+          amount: 0
+        }
+      }));
     };
 
-    if (none !== 'none' && amount > 0) {
-      dispatch(addOrder(order));
-    } else if (amount === 0) {
-      dispatch(deleteOrder(order));
+    if (none !== 'none') {
+      dispatch(addOrder({
+        service: service,
+        clothes: {
+          name: item.name,
+          price: item.price,
+          amount: amount
+        }
+      }));
     };
 
   }, [amount, none]);
@@ -55,11 +73,11 @@ export default function ClothesItem({item, service}) {
           <div className={`add-amount ${none}`}>
             <span
               className='amount-decrement'
-              onClick={() => setAmount((prev) => prev - 1)}/>
+              onClick={decAmount}/>
             <p className='amount-number'>{amount}</p>
             <span
               className='amount-increment'
-              onClick={() => setAmount((prev) => prev + 1)}/>
+              onClick={incAmount}/>
           </div>
         </div>
       </div>
