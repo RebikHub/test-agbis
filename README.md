@@ -1,1 +1,4 @@
-https://rebikhub.github.io/test-agbis/
+https://rebikhub.github.io/test-agbis/ - Ссылка на готовое решение.
+
+Для взаимодействия со страницей был применен react. Для хранения заказов корзины, использовал redux.
+
