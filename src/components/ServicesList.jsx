@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import '../styles/main.css';
 
-const list = {
-  services: ['Химчистка', 'Аквачистка', 'Ремонт одежды', 'Химчистка', 'Аквачистка', 'Ремонт одежды'],
-  clothes: ['Аксессуары', 'Верхняя одежда', 'Деловой костюм', 'Джинса', 'Куртка и пуховик', 'Пальто и плащ']
-};
-
 export default function ServicesList({choiceClothes}) {
+  const services = useSelector((state) => state.sliceData)
   const [id, setId] = useState({
     service: null,
     clothes: null
@@ -20,35 +17,35 @@ export default function ServicesList({choiceClothes}) {
     };
   };
 
-  function clickClothes(index) {
+  function clickClothes(index, list) {
     if (id.clothes === null) {
       setId({...id, clothes: index});
-      choiceClothes(list.clothes[index]);
+      choiceClothes(list);
     } else if (id.clothes === index) {
       setId({...id, clothes: null});
     } else {
       setId({...id, clothes: index});
-      choiceClothes(list.clothes[index]);
+      choiceClothes(list);
     };
   };
 
   return (
     <nav className='nav'>
-      {list.services.map((e, i) => (
+      {services.map((e, i) => (
         <div className='nav-service' key={i}>
           <p
             className={`nav-title${i === id.service ? '-focus' : ''}`}
             onClick={() => clickService(i)}>
-            {e}
+            {e.name}
             <span className={`nav-img${i === id.service ? '-invert' : ''}`}/>
           </p>
           <ul className={`service-list ${i === id.service ? '' : 'none'}`}>
-            {id.service !== null && list.clothes.map((el, index) => (
+            {e.clothes.map((el, index) => (
               <li
                 className={`clothes-item${index === id.clothes ? '-focus' : ''}`}
-                onClick={() => clickClothes(index)}
+                onClick={() => clickClothes(index, el.clothes_type)}
                 key={index}>
-                <p className='clothes-text'>{el}</p>
+                <p className='clothes-text'>{el.type}</p>
               </li>
             ))}
           </ul>

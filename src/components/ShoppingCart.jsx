@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function ShoppingCart({order}) {
-  const [amount, setAmount] = useState();
+  const [amount, setAmount] = useState(1);
   const [none, setNone] = useState(false);
 
   return (
@@ -19,31 +19,36 @@ export default function ShoppingCart({order}) {
           </div>
         </div>
 
-        {none && order.map((e,i) => (
-          <div className='order' key={i}>
-            <div className='order-title'>
-              <p className='order-title-text'>{e.service}</p>
-            </div>
-            <div className='order-description'>
-              <span className='order-desc-close'/>
-              <div className='order-desc-body'>
-                <p className='order-desc-text'>{e.clothes}</p>
-                <div className='order-desc-amount'>
-                  <p className='order-desc-sum'>{e.price}&#8381;</p>
-                  <div className='order-desc-add'>
-                    <span
-                      className='amount-decrement'
-                      onClick={() => setAmount((prev) => prev - 1)}/>
-                    <p className='amount-number'>{amount}</p>
-                    <span
-                      className='amount-increment'
-                      onClick={() => setAmount((prev) => prev + 1)}/>
+        {none &&
+        <div>
+          {order.map((e,i) => (
+            <div className='order' key={i}>
+              <div className='order-title'>
+                <p className='order-title-text'>{e.service}</p>
+              </div>
+              <div className='order-description'>
+                <span className='order-desc-close'/>
+                <div className='order-desc-body'>
+                  <p className='order-desc-text'>{e.clothes}</p>
+                  <div className='order-desc-amount'>
+                    <p className='order-desc-sum'>{e.price}&#8381;</p>
+                    <div className='order-desc-add'>
+                      <span
+                        className='order-decrement'
+                        onClick={() => setAmount((prev) => prev - 1)}/>
+                      <p className='order-number'>{amount}</p>
+                      <span
+                        className='order-increment'
+                        onClick={() => setAmount((prev) => prev + 1)}/>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+          <button className='order-btn' type='button'>Оформить заказ</button>
+        </div>
+        }
       </div>
 
       <button className={`cart-arrow-btn${none ? '-invert' : ''}`} type='button' onClick={() => setNone(!none)}/>

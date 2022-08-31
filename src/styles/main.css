@@ -21,10 +21,6 @@
   color: #1D252E;
 }
 
-.main-body {
-
-}
-
 .main-description {
   width: 946px;
   height: 66px;
@@ -270,8 +266,6 @@
   font-family: 'Montserrat-bold';
   font-size: 18px;
   line-height: 24px;
-  /* identical to box height, or 133% */
-  
   display: flex;
   align-items: center;
   text-align: right;
@@ -373,7 +367,7 @@
 }
 
 .cart-long {
-
+  top: 2px;
 }
 
 .cart-body {
@@ -424,42 +418,124 @@
 
 .order {
   margin-top: 15px;
+  margin-bottom: 29px;
+  padding-bottom: 19px;
+  border-bottom: 1px solid #B0B0B0;
 }
 
 .order-title {
-
+  width: 329px;
+  border-bottom: 1px solid #B0B0B0;
 }
 
 .order-title-text {
-
-}
-
-.order-description {
-
+  font-family: 'Montserrat-regular';
+  font-size: 16px;
+  line-height: 26px;
+  color: #0084CA;
+  padding-bottom: 12px;
 }
 
 .order-desc-close {
-
+  display: flex;
+  margin-top: 7px;
+  margin-left: auto;
+  width: 11px;
+  height: 11px;
+  background-image: url(../images/order-close.png);
+  background-position: center;
+  cursor: pointer;
 }
 
 .order-desc-body {
-
+  display: flex;
+  margin-top: 3.4px;
+  width: 329px;
 }
 
 .order-desc-text {
-
+  width: 225px;
+  margin-top: 2px;
+  font-family: 'Montserrat-regular';
+  font-size: 10px;
+  line-height: 16px;
+  color: #1D252E;
 }
 
 .order-desc-amount {
-
+  margin-left: auto;
 }
 
 .order-desc-sum {
-
+  font-family: 'Montserrat-bold';
+  font-size: 14px;
+  line-height: 24px;
+  color: #1D252E;
+  text-align: right;
 }
 
 .order-desc-add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  box-sizing: border-box;
+  width: 67px;
+  height: 26px;
+  border: 1px solid #0084CA;
+  border-radius: 4px;
+}
 
+.order-decrement, .order-increment {
+  display: flex;
+  width: 12.5px;
+  height: 12.5px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.order-decrement {
+  margin-left: 4px;
+  background-image: url(../images/order-minus.png);
+}
+
+.order-increment {
+  margin-right: 4px;
+  background-image: url(../images/order-plus.png);
+}
+
+.order-number {
+  font-family: 'Montserrat-bold';
+  font-size: 16px;
+  line-height: 24px;
+  color: #1D252E;
+}
+
+.order-btn {
+  display: flex;
+  width: 224px;
+  height: 60px;
+  margin: 60px auto auto auto;
+  background: #0084CA;
+  border: 1px solid #FFFFFF;
+  border-radius: 40px;
+  font-family: 'Montserrat-bold';
+  font-size: 16px;
+  line-height: 24px;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.order-btn:hover {
+  background-color: #016DA6;
+}
+
+.order-btn:focus {
+  background-color: #0084CA;
+  border: 3px solid #016DA6;
 }
 
 .cart-arrow-btn, .cart-arrow-btn-invert {

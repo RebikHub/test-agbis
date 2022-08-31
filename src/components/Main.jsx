@@ -3,58 +3,12 @@ import '../styles/main.css';
 import ClothesList from './ClothesList';
 import SearchForm from './SearchForm';
 import ServicesList from './ServicesList';
-import ShoppingCart from './ShoppingCart';
-
-const clothes = {
-  outerwear: [
-    {
-      name: 'Пальто, полупальто с подстежкой из натурального меха',
-      price: 1400
-    },
-    {
-      name: 'Ветровка',
-      price: 520
-    },
-    {
-      name: 'Ветровка (натуральный шелк)',
-      price: 3000
-    },
-    {
-      name: 'Пальто, полупальто с подстежкой из натурального меха',
-      price: 11000
-    }
-  ],
-  businessSuit: [
-    {
-      name: 'Пиджак',
-      price: 1400
-    },
-    {
-      name: 'Пиджак натуральный шелк',
-      price: 520
-    },
-    {
-      name: 'Пиджак с коротким рукавом без подклада',
-      price: 3000
-    },
-    {
-      name: 'Пиджак натуральный шёлк с коротким рукавом',
-      price: 11000
-    }
-  ]
-}
 
 export default function Main() {
   const [listClothes, setListClothes] = useState([]);
 
   function choiceClothes(list) {
-    if (list === 'Верхняя одежда') {
-      setListClothes(clothes.outerwear);
-    };
-
-    if (list === 'Деловой костюм') {
-      setListClothes(clothes.businessSuit);
-    };
+    setListClothes(list);
   }
 
   return (
