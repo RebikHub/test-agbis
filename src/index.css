@@ -63,6 +63,7 @@ body {
   position: relative;
   background-color: #FBFBFC;
   width: 1440px;
+  min-height: 100%;
   margin: 0 auto;
   z-index: 1;
 }

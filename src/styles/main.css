@@ -352,7 +352,7 @@
 
 .cart, .cart-long {
   display: flex;
-  position: absolute;
+  position: fixed;
   width: 520px;
   right: 0;
   bottom: 0;
